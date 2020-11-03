@@ -5,11 +5,11 @@ import SignUp from './components/SignUp.jsx';
 import Main from './components/Main.jsx';
 
 class App extends React.Component {
-  // // when the component first mounts,
-  // // send a fetch request to the back end
-  // // see if the current user has a cookie session
-  // // if they do, redirect to main page
-  // // if they don't, redirect to login 
+  // when the component first mounts,
+  // send a fetch request to the back end
+  // see if the current user has a cookie session
+  // if they do, redirect to main page
+  // if they don't, redirect to login 
   // componentDidMount() {
   //   const { push } = useHistory();
   //   // as soon as the page loads,
@@ -22,7 +22,7 @@ class App extends React.Component {
   //   }).then((isSignedIn) => {
   //     // current user isLoggedIn
   //     // if they are, display Main.jsx
-  //     if(isSignedIn) push('/main');
+  //     if (isSignedIn) push('/main');
   //     // if not, direct them to the login page
   //     push('/login');
   //   })
@@ -40,7 +40,7 @@ class App extends React.Component {
         <Route path='/signup'>
           <SignUp />
         </Route>
-      </div>
+      </div>``
     )
   }
 }

@@ -26,18 +26,21 @@ app.get('/', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../
 
 // check if the user is logged in, and if so, send the username back to the client
 app.get('/api/isloggedin', sessionController.isLoggedIn, (req, res) => {
+  console.log('in the logged in page')
   const { isLoggedIn, username } = res.locals;
   res.status(200).send({ isLoggedIn, username });
 });
 
 // ! TO DO - check response format!!!!!
 app.post('/api/signup', userController.hashPassword, userController.createUser, sessionController.createSession, (req, res) => {
+  console.log('in signup page')
   const { username, isLoggedIn } = res.locals;
   res.status(200).send({ isLoggedIn, username });
 });
 
 // Handle attempts to login by the client
 app.post('/api/login', userController.verifyUser, sessionController.createSession, (req, res) => {
+  console.log('in login page')
   const { isLoggedIn, username } = res.locals;
   res.status(200).send({ isLoggedIn, username });
 });
