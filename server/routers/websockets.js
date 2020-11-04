@@ -4,6 +4,7 @@ const WebSocket = require('ws');
 const WS_SERVERS = {};
 
 // Broadcast any data received from one client back to all clients
+//send the data to all opoen sockets
 const broadcast = (portNum, data) => {
   WS_SERVERS[portNum].clients.forEach((client) => {
     // Only send the data to a client if they have an open connection
