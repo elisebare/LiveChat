@@ -36,11 +36,12 @@ class Main extends React.Component {
         };
 
         this.connection.onmessage = (event) => {
-            // when message is received from server
-            // append to dom
+            console.log("we got a message!", event)
+        // when message is received from server
+        // append to dom
             this.setState((prevState) => {
                 return {
-                    ...prevState,
+                    ...prevState, 
                     messages: [...prevState.messages, event.data],
                 }
             });
@@ -62,21 +63,21 @@ class Main extends React.Component {
         return (
             <div>
                 <div className='chatroom'>
-                    {this.state.messages.map(message => (
-                        <>
-                            <p>{message}</p>
-                            <hr />
-                        </>
+                    { this.state.messages.map(message => (
+                    <>
+                        <p>{message}</p>
+                        <hr />
+                    </>
                     ))}
                 </div>
                 <hr />
                 <form>
-                    <input
+                    <input 
                         type='text'
                         className='message'
                         placeholder='message'
                         onChange={this.handleChange}
-                    />
+                        />
                     <button
                         type='button'
                         onClick={(e) => {
@@ -85,7 +86,7 @@ class Main extends React.Component {
                             const textbox = document.querySelector('.message');
                             textbox.value = '';
                         }}
-                    >
+                        >
                         Send
                     </button>
                 </form>

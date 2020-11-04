@@ -1,14 +1,14 @@
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 
-//create intial state
+// //create intial state
 
-const loginReducer = (state = intialState, action) => {
+// const loginReducer = (state = intialState, action) => {
 
-}
-
-
+// }
 
 
 
 
-export default loginReducer;
+
+
+// export default loginReducer;

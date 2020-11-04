@@ -1,15 +1,15 @@
-import { bindActionCreators } from 'redux';
+// import { bindActionCreators } from 'redux';
 
 
 
-const chatRoomReducer = (state = intialState, action) => {
+// const chatRoomReducer = (state = intialState, action) => {
 
-}
-
-
+// }
 
 
 
 
 
-export default chatRoomReducer;
+
+
+// export default chatRoomReducer;
