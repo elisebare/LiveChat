@@ -17,12 +17,16 @@ app.use(express.json());
 // Automatically parse urlencoded body content from incoming requests and place it in req.body
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//going to build off of build folder file created by webpack
+app.use('/build', express.static(path.join(__dirname, '../build')));
+
 // Create a websocket server on port 4040
 webSockets.createServer(4040);
 
 // Serve the homepage when receiving a get request for '/'
 // TO DO: Get all channels from the database and call createWebsocketServer for each one
 app.get('/', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/index.html')));
+
 
 // check if the user is logged in, and if so, send the username back to the client
 app.get('/api/isloggedin', sessionController.isLoggedIn, (req, res) => {
@@ -45,11 +49,13 @@ app.post('/api/login', userController.verifyUser, sessionController.createSessio
   res.status(200).send({ isLoggedIn, username });
 });
 
-// 404 handler for unknown routes
-app.use('*', (req, res) => {
-  // Re-route to index.html to avoid resetting the React app
-  res.status(404).sendFile(path.resolve(__dirname, '../client/index.html'));
-});
+// // 404 handler for unknown routes
+// app.use('*', (req, res) => {
+//   // Re-route to index.html to avoid resetting the React app
+//   res.status(404).sendFile(path.resolve(__dirname, '../client/index.html'));
+// });
+
+app.use('/*', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/index.html')));
 
 // Global error handler
 app.use((err, req, res, next) => {
