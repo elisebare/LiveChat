@@ -1,32 +1,32 @@
-// import both login and chatroom componenets
-//maptostate/props
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+// // import both login and chatroom componenets
+// //maptostate/props
+// import React, { Component } from 'react'
+// import { connect } from 'react-redux'
 
 
-const mapStateToProps = state => ({
+// const mapStateToProps = state => ({
 
-})
+// })
 
-const mapDispatchToProps = dispatch => ({
+// const mapDispatchToProps = dispatch => ({
 
-})
+// })
 
-class MainContainer extends Component {
-    constructor(props) {
-        super(props)
-    }
+// class MainContainer extends Component {
+//     constructor(props) {
+//         super(props)
+//     }
 
-    //render out both components 
-    render() {
-        return (
-            <div className='mainContainer'>
+//     //render out both components 
+//     render() {
+//         return (
+//             <div className='mainContainer'>
 
-            </div>
+//             </div>
 
-        )
-    }
+//         )
+//     }
 
-}
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainContainer)
+// export default connect(mapStateToProps, mapDispatchToProps)(MainContainer)
