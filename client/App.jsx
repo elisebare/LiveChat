@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, useHistory } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Login from './components/Login.jsx';
 import SignUp from './components/SignUp.jsx';
 import Main from './components/Main.jsx';
@@ -29,18 +30,19 @@ class App extends React.Component {
   // }
 
   render() {
+    
     return (
-      <div >
+      <Switch >
         <Route exact path='/'>
           <Main />
         </Route>
-        <Route exact path='/login' >
+        <Route exact path='/login'>
           <Login />
         </Route>
-        <Route path='/signup'>
+        <Route exact path='/signup'>
           <SignUp />
         </Route>
-      </div>``
+      </Switch>
     )
   }
 }
